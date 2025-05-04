@@ -16,7 +16,7 @@ def subsets(nums):
     subsets = []
 
     def dfs(i):
-        if i <= len(nums):
+        if i >= len(nums):
             res.append(subsets.copy())
             return
         
