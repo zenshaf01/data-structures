@@ -1,0 +1,22 @@
+# Topics:
+- Linked List
+    - Code a Linked List - Done
+    - Reverse a linked list - Done
+    - Merge K sorted list - Done
+- Stack
+    - Code a stack - Done
+    - Valid parenthesis - Done
+    - Min Stack - Done
+- Queue
+    - Code a queue - Done
+    - BFS Level order traversal - Done
+- Binary Search Tree
+    - DFS - Done
+    - BFS - Done
+- Strings
+    - Longest valid (unique) sub string - Done
+    - Sliding Window - Done
+- Binary Search - Done
+- Insertion sort 
+- Quick Sort
+- Bubble Sort
