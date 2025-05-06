@@ -70,13 +70,20 @@ they are implemented using arrays.
             else if current is greater than the left, swap with left
         b. we replace the root with the minimum of the left and right children (Note that if there is a right child, there will always be a left child for a heap to be a complete bionary tree)
 
-
+ heapify / build heap:
+    This involves building a min or max heap form a list. The resulting heap must satisfy the structure and the order property of a heap.
+    1. Move the element at array[0] to the end of the array. This will satisfy the structure property since we dont want any element on the index 0.
+    2. To satisfy the order property, we start doing the following (The general idea is to check each node and make sure that the node is smaller or equal to its decendents in a min heap and oppoiste in a max heap):
+        a. Start at the bottom node / last node in the tree. and then keep moving up. You need to move level by level.
+        b. compare the node with both its children if there are thyere and swap with the min if necessary. (You dont need to do anything in cases where the node does not have any children)
+        c. repeat 2 untill heap has built 
 '''
 
 class Heap:
     def __init__(self):
         self.heap = [0]
 
+    # O(log n)
     def push(self, val):
         # add element to next available contiguous position
         self.heap.append(val)
@@ -89,6 +96,7 @@ class Heap:
             self.heap[i // 2] = tmp
             i = i // 2
 
+    # O(log n)
     def pop(self):
         # if length is 1 we know the heap is empty
         if len(self.heap) == 1:
@@ -128,3 +136,37 @@ class Heap:
                 break
 
         return result
+    
+    '''
+        You can also use the heapify algorithm to sort a list.
+        YOu would first heapify the list and then start popping elements from the heap which will result in a sorted list since the heap has the sorted property.
+        O(nlogn)
+    '''
+    def heapify(self, array):
+        # move the item at 0 to the end of the array
+        array.append(array[0])
+
+        # set heap
+        self.heap = array
+        # 
+        curr = (len(self.heap) - 1) // 2
+
+        while curr > 0:
+            i = curr
+            while 2 * i < len(self.heap):
+                if 2 * i + 1 < len(self.heap) and self.heap[2 * i + 1] < self.heap[2 * i] and self.heap[i] > self.heap[2 * i + 1]:
+                    tmp = self.heap[2 * i + 1]
+                    self.heap[2 * i + 1] = self.heap[i]
+                    self.heap[i] = tmp
+                    i = 2 * i + 1 
+                elif self.heap[i] > self.heap[2 * i]:
+                    tmp = self.heap[2 * i]
+                    self.heap[2 * i] = self.heap[i]
+                    self.heap[i] = tmp
+                    i = 2 * i
+                else:
+                    break
+
+            curr -= 1
+            
+
