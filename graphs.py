@@ -51,6 +51,8 @@ The adjacency list Graph Node would have the following information:
 1. Value
 2. A list of neighbors: This would a list of pointers to the other nodes / vertices. 
 Note that this will only have pointers to other or self vertices which this vertex is connected to according to the graph.
+
+DFS is very frequently applied to graphs.
 '''
 
 # Adjacency list 
@@ -58,3 +60,8 @@ class GraphNode:
     def __init__(self, val):
         self.val = val
         self.neighbors = []
+
+    
+    
+
+    
