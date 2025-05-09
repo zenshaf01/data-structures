@@ -1,6 +1,7 @@
 package interviewPrep;
 
 import java.util.Arrays;
+import java.util.HashMap;
 
 public class StringQuestions {
     public String reverse(String s) {
@@ -81,19 +82,5 @@ public class StringQuestions {
         Arrays.sort(ta);
 
         return Arrays.equals(sa, ta);
-    }
-
-    public boolean isAnagram2(String s, String t) {
-        if(s.length() != t.length()) {
-            return false;
-        }
-
-        char[] S = s.toCharArray();
-        char[] T = s.toCharArray();
-
-        Arrays.sort(S);
-        Arrays.sort(T);
-
-        return Arrays.equals(S, T);
     }
 }
