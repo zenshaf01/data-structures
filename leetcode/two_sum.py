@@ -1,4 +1,4 @@
-def twoSum(self, nums, target):
+def twoSum(nums, target):
         my_map = {}
 
         for i in range(len(nums)):
